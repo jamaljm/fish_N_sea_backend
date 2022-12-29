@@ -3,14 +3,19 @@ from django.urls import path
 
 
 urlpatterns = [     
-    path('customer/', views.customer_list),
-    path('customer/<int:pk>/', views.customer_detail),
-    path('retailers/', views.retailers_list),
-    path('retailers/<int:pk>/', views.retailers_detail),
-    path('fishermen/', views.fishermen_list),
-    path('fishermen/<int:pk>/', views.fishermen_detail),
-    path('fish1/', views.fish1_list),
-    path('fish1/<int:pk>/', views.fish1_detail),
-    path('fish2/', views.fish2_list),
-    path('fish2/<int:pk>/', views.fish2_detail),
+    
+    path("signup-customer/",views.customercreate(),name="signup-owner"),
+    path("signup-fisherman/",views.fishermancreate(),name="signup-fisherman"),
+    path("signup-retailer/",views.retailerscreate(),name="signup-retailer"),
+    path("addfish/",views.fishcreate(),name="addfish"),
+    path("listfish/",views.fishlist(),name="listfish"),
+    path("listcustomer/",views.customerlist(),name="listcustomer"),
+    path("listretailer/",views.retailerslist(),name="listretailer"),
+    path("listfisherman/",views.fishermanlist(),name="listfisherman"),
+    
+
+    
+
+
+
 ]

@@ -159,7 +159,7 @@ class retrieveretailers(RetrieveAPIView):
     serializer_class = retailerserializer
 
 class retrievefisherman(RetrieveAPIView):
-    queryset = fishermen.objects.all
+    queryset = fishermen.objects.all()
     serializer_class = fishermanserializer
 
 class retrievefish(RetrieveAPIView):

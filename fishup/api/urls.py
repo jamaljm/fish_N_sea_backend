@@ -33,6 +33,6 @@ urlpatterns = [
     path("filterretailer/",views.retailerslist2.as_view(),name="filterretailer"),
 
     
-    
 
 ]
+

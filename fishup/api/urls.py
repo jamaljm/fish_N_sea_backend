@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-from .views import login
+
 
 
 urlpatterns = [     
@@ -31,6 +31,9 @@ urlpatterns = [
     path("retrievefish/<int:pk>/",views.retrievefish.as_view(),name="retrievefish"),
 
 
-    path("login/",views.login,name="login"),
+    path("login-customer/",views.logincustomer.as_view(),name="login"),
+    path("login-retailer/",views.loginretailers.as_view(),name="login"),
+     path("login-fisherman/",views.loginfisherman.as_view(),name="login"),
+    
 
 ]

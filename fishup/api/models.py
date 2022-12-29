@@ -41,10 +41,12 @@ class fishermen(models.Model):
 
 
 class fish1(models.Model):
-    user = models.ForeignKey(retailers,on_delete=models.CASCADE)
+    retailers = models.ForeignKey(retailers,on_delete=models.CASCADE,null=True,blank=True)
+    fishermen = models.ForeignKey(fishermen,on_delete=models.CASCADE,null=True,blank=True)
     name = models.TextField(blank=False)
     price = models.IntegerField(blank=False)
     description = models.TextField(blank=True,null=True)
+
     
     def __str__(self):
         return self.name

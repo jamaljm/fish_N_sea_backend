@@ -5,7 +5,7 @@ from .models import customer, retailers, fishermen, fish1, fish2
 class fishserializer(serializers.ModelSerializer):
     class Meta:
         model = fish1
-        fields = ('id', 'name', 'price', 'description', 'user') 
+        fields = ('id', 'name', 'price', 'description', 'retailers','fishermen') 
 
 
 class fishermanserializer(serializers.ModelSerializer):

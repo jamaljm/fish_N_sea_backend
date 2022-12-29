@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from .models import customer, retailers, fishermen, fish1, fish2
 from .serializers import customerserializer, retailerserializer, fishermanserializer, fishserializer, fishserializer2
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView,DestroyAPIView
 from django_filters.rest_framework import DjangoFilterBackend
 
 # listing
@@ -45,4 +45,12 @@ class fishermancreate(CreateAPIView):
 class fishcreate(CreateAPIView):
     queryset = fish1.objects.all()
     serializer_class = fishserializer
-# by 
+
+# delete
+
+class deletecustomer(DestroyAPIView):
+    queryset = customer.objects.all()
+    serializer_class = customerserializer
+   
+
+    

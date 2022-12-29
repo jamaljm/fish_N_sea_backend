@@ -1,10 +1,10 @@
-from django.shortcuts import render
+
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from .models import customer, retailers, fishermen, fish1, fish2
-from .serializers import customerserializer, retailerserializer, fishermanserializer, fishserializer, fishserializer2
+from .serializers import customerserializer, retailerserializer, fishermanserializer, fishserializer, fishserializer2,customerserializer3
 from rest_framework.generics import ListAPIView, CreateAPIView,DestroyAPIView,RetrieveAPIView,UpdateAPIView
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics, status
@@ -110,43 +110,61 @@ class retrievefish(RetrieveAPIView):
 
 # login
 
-class logincustomer(generics.CreateAPIView):
-    serializer_class = customerserializer
+# class logincustomer(generics.CreateAPIView):
+#     serializer_class = customerserializer3
 
-    def post(self, request, *args, **kwargs):
-        username = request.data.get("username", "")
-        password = request.data.get("password", "")
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            serializer = customerserializer(user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
-
-
-class loginfisherman(generics.CreateAPIView):
-    serializer_class = fishermanserializer
-
-    def post(self, request, *args, **kwargs):
-        username = request.data.get("username", "")
-        password = request.data.get("password", "")
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            serializer = fishermanserializer(user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+#     def post(self, request, *args, **kwargs):
+#         email = request.data.get("email","")
+#         password = request.data.get("password","")
+#         print(email)
+#         print(password)
+#         vemail=cu
+#         user = authenticate(email=email, password=password)
+#         if user is not None:
+#             print("heheheh")
+#             serializer = customerserializer(user)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         else:
+#             return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
 
 
-class loginretailers(generics.CreateAPIView):
-    serializer_class = retailerserializer
+# class loginfisherman(generics.CreateAPIView):
+#     serializer_class = fishermanserializer
 
-    def post(self, request, *args, **kwargs):
-        username = request.data.get("username", "")
-        password = request.data.get("password", "")
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            serializer = retailerserializer(user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        else:
-            return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+#     def post(self, request, *args, **kwargs):
+#         username = request.data.get("username", "")
+#         password = request.data.get("password", "")
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             serializer = fishermanserializer(user)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         else:
+#             return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+# class loginretailers(generics.CreateAPIView):
+#     serializer_class = retailerserializer
+
+#     def post(self, request, *args, **kwargs):
+#         username = request.data.get("email", "")
+#         password = request.data.get("password", "")
+#         user = authenticate(request, username=username, password=password)
+#         if user is not None:
+#             serializer = retailerserializer(user)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         else:
+#             return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+# def login(request):
+#     if method=='POST':
+#         email = request.data.get("email")
+#         password = request.data.get("password")
+#         user = authenticate(request, email=email, password=password)
+#         if user is not None:
+#             serializer = retailerserializer(user)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
+#         else:
+#             return Response({"error": "Invalid login credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+
+

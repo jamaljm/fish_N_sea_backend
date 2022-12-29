@@ -31,9 +31,9 @@ urlpatterns = [
     path("retrievefish/<int:pk>/",views.retrievefish.as_view(),name="retrievefish"),
 
 
-    path("login-customer/",views.logincustomer.as_view(),name="login"),
-    path("login-retailer/",views.loginretailers.as_view(),name="login"),
-     path("login-fisherman/",views.loginfisherman.as_view(),name="login"),
+    # path("login-customer/",views.logincustomer.as_view(),name="login"),
+    # path("login-retailer/",views.loginretailers.as_view(),name="login"),
+    #  path("login-fisherman/",views.loginfisherman.as_view(),name="login"),
     
 
 ]

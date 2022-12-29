@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path
-
+from .views import login
 
 
 urlpatterns = [     
@@ -16,5 +16,21 @@ urlpatterns = [
     path("listfisherman/",views.fishermanlist.as_view(),name="listfisherman"),
 
     path("deletecustomer/<int:pk>/",views.deletecustomer.as_view(),name="deletecustomer"),
+    path("deletefisherman/<int:pk>/",views.deletefisherman.as_view(),name="deletefisherman"),
+    path("deleteretailers/<int:pk>/",views.deleteretailers.as_view(),name="deleteretailers"),
+    path("deletefish/<int:pk>/",views.deletefish.as_view(),name="deletefish"),
+
+    path("updatecustomer/<int:pk>/",views.updatecustomer.as_view(),name="updatecustomer"),
+    path("updatefisherman/<int:pk>/",views.updatefisherman.as_view(),name="updatefisherman"),
+    path("updateretailers/<int:pk>/",views.updateretailers.as_view(),name="updateretailers"),
+    path("updatefish/<int:pk>/",views.updatefish.as_view(),name="updatefish"),
+
+    path("retrievecustomer/<int:pk>/",views.retrievecustomer.as_view(),name="retrievecustomer"),
+    path("retrieveretailers/<int:pk>/",views.retrieveretailers.as_view(),name="retrieveretailers"),
+    path("retrievefisherman/<int:pk>/",views.retrievefisherman.as_view(),name="retrievefisherman"),
+    path("retrievefish/<int:pk>/",views.retrievefish.as_view(),name="retrievefish"),
+
+
+    path("login/",views.login,name="login"),
 
 ]

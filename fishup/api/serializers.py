@@ -31,7 +31,3 @@ class fishserializer2(serializers.ModelSerializer):
         model = fish2
         fields = ('id', 'name', 'price', 'description', 'user') 
 
-class customerserializer3(serializers.ModelSerializer):
-    class Meta:
-        model = customer
-        fields = ('email','password')

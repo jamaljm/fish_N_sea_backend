@@ -1,14 +1,12 @@
 
 
 # Create your views here.
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.parsers import JSONParser
 from .models import customer, retailers, fishermen, fish1, fish2
-from .serializers import customerserializer, retailerserializer, fishermanserializer, fishserializer, fishserializer2,customerserializer3
+from .serializers import customerserializer, retailerserializer, fishermanserializer, fishserializer, fishserializer2
 from rest_framework.generics import ListAPIView, CreateAPIView,DestroyAPIView,RetrieveAPIView,UpdateAPIView
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import generics, status
-from django.contrib.auth import authenticate
+
+
 
 
 

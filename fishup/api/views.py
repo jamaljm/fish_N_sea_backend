@@ -30,17 +30,19 @@ class fishlist(ListAPIView):
 
 #  creating
 
-class customerlist(CreateAPIView):
+class customercreate(CreateAPIView):
     queryset = customer.objects.all()
     serializer_class = customerserializer
 
-class retailerslist(CreateAPIView):
+class retailerscreate(CreateAPIView):
     queryset = retailers.objects.all()
     serializer_class = retailerserializer
 
-class fishermanlist(CreateAPIView):
+class fishermancreate(CreateAPIView):
     queryset = fishermen.objects.all()
     serializer_class = fishermanserializer
 
-
+class fishcreate(CreateAPIView):
+    queryset = fish1.objects.all()
+    serializer_class = fishserializer
 # by 

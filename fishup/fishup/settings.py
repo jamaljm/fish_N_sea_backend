@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-3%!vv3ks=0)sdq14ptfno)@l5a05=zbub!3$ye*h-o3#@jp84!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -51,8 +52,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", 
 
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True  
 
 ROOT_URLCONF = "fishup.urls"
 
@@ -82,8 +86,11 @@ WSGI_APPLICATION = "fishup.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": 'beachhack',
+        'USER': 'postgres',
+        'PASSWORD': 'jeff',
+        'HOST' : 'localhost'
     }
 }
 
@@ -123,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"        
 
 REST_FRAMEWORK = {  
     "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"]

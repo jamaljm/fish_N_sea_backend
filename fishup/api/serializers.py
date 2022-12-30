@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import customer, retailers, fishermen, fish1, fish2
+from .models import customer, retailers, fishermen, fish1, fish2,fishcount
 
 
 class fishserializer(serializers.ModelSerializer):
@@ -31,3 +31,8 @@ class fishserializer2(serializers.ModelSerializer):
         model = fish2
         fields = ('id', 'name', 'price', 'description', 'user') 
 
+
+class fishcountserializer(serializers.ModelSerializer):
+    class Meta:
+        model = fishcount
+        fields = ('id', 'name')

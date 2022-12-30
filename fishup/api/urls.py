@@ -3,17 +3,22 @@ from django.urls import path
 
 
 
+
 urlpatterns = [     
     
     path("signup-customer/",views.customercreate.as_view(),name="signup-owner"),
     path("signup-fisherman/",views.fishermancreate.as_view(),name="signup-fisherman"),
     path("signup-retailer/",views.retailerscreate.as_view(),name="signup-retailer"),
     path("addfish/",views.fishcreate.as_view(),name="addfish"),
+     path("addfish4/",views.fishcreate4.as_view(),name="addfish4"),
     
     path("listfish/",views.fishlist.as_view(),name="listfish"),
     path("listcustomer/",views.customerlist.as_view(),name="listcustomer"),
     path("listretailer/",views.retailerslist.as_view(),name="listretailer"),
     path("listfisherman/",views.fishermanlist.as_view(),name="listfisherman"),
+    
+    # path("addfishcount/<int:pk>/",views.fishcount.as_view({"get": "retrieve"}),name="addfishcount"),
+    
 
     path("deletecustomer/<int:pk>/",views.deletecustomer.as_view(),name="deletecustomer"),
     path("deletefisherman/<int:pk>/",views.deletefisherman.as_view(),name="deletefisherman"),
@@ -31,6 +36,9 @@ urlpatterns = [
     path("retrievefish/<int:pk>/",views.retrievefish.as_view(),name="retrievefish"),
 
     path("filterretailer/",views.retailerslist2.as_view(),name="filterretailer"),
+
+
+    # path("counter/",views.fishcount.as_view(),name="couter"),
 
     
 

@@ -60,3 +60,12 @@ class fish2(models.Model):
     
     def __str__(self):
         return self.name
+
+
+class fishcount(models.Model):
+    name = models.TextField(blank=False)
+    rating = models.IntegerField(blank=False)
+    
+    
+    def __str__(self):
+        return self.name

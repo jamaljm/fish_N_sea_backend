@@ -46,8 +46,7 @@ class fish1(models.Model):
     name = models.TextField(blank=False)
     price = models.IntegerField(blank=False)
     description = models.TextField(blank=True,null=True)
-    image = models.TextField(blank=False)
-    
+    image = models.TextField(default="/images/f4.jpg")
 
     
     def __str__(self):

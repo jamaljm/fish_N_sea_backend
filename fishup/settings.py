@@ -85,13 +85,15 @@ WSGI_APPLICATION = "fishup.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": 'beachhack',
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'jeff',
-        'HOST' : 'localhost'
+        'PASSWORD': 'Co1mJKWRSHilBcO7quDz',
+        'HOST': 'containers-us-west-64.railway.app',
+        'PORT': '6640',
     }
 }
 

@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "fishup/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "fishup/wsgi.py"
+    }
+  ]
+}
